@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleBoard.Website", "DoodleBoard.Website\DoodleBoard.Website.csproj", "{DF46FACD-E5E3-4C43-8B50-3BEB920CDEF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleBoard.Contract", "DoodleBoard.Contract\DoodleBoard.Contract.csproj", "{82387796-0C52-4EDC-A3BA-2068C0C78A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleBoard.Repository", "DoodleBoard.Repository\DoodleBoard.Repository.csproj", "{C0B692FE-22B0-4CAF-B940-8AADC5D4604B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleBoard.Service", "DoodleBoard.Service\DoodleBoard.Service.csproj", "{CF43986D-414B-444E-B0F3-3525CB20DC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoodleBoard.Model", "DoodleBoard.Model\DoodleBoard.Model.csproj", "{C15D5E0B-E0CE-4A26-853D-58A4C0F421B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF46FACD-E5E3-4C43-8B50-3BEB920CDEF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF46FACD-E5E3-4C43-8B50-3BEB920CDEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF46FACD-E5E3-4C43-8B50-3BEB920CDEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF46FACD-E5E3-4C43-8B50-3BEB920CDEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82387796-0C52-4EDC-A3BA-2068C0C78A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82387796-0C52-4EDC-A3BA-2068C0C78A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82387796-0C52-4EDC-A3BA-2068C0C78A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82387796-0C52-4EDC-A3BA-2068C0C78A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B692FE-22B0-4CAF-B940-8AADC5D4604B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B692FE-22B0-4CAF-B940-8AADC5D4604B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B692FE-22B0-4CAF-B940-8AADC5D4604B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B692FE-22B0-4CAF-B940-8AADC5D4604B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF43986D-414B-444E-B0F3-3525CB20DC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF43986D-414B-444E-B0F3-3525CB20DC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF43986D-414B-444E-B0F3-3525CB20DC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF43986D-414B-444E-B0F3-3525CB20DC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15D5E0B-E0CE-4A26-853D-58A4C0F421B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15D5E0B-E0CE-4A26-853D-58A4C0F421B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15D5E0B-E0CE-4A26-853D-58A4C0F421B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15D5E0B-E0CE-4A26-853D-58A4C0F421B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

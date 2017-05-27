@@ -1,0 +1,215 @@
+﻿@model DoodleBoard.Website.Models.WhiteboardViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.HiddenFor(x => x.WhiteboardId)
+
+<script src="~/signalr/hubs"></script>
+@*<script src="~/Scripts/doodleboard.models.js"></script>*@
+<script src="~/Scripts/doodleboard.drawing.js"></script>
+<script src="~/Scripts/doodleboard.signalr.js"></script>
+
+<div class="container">
+    <div class="col-xs-12 col-md-6 text-md-right text-sm-center">
+        <div class="svgwrapper">
+            <svg id="shapepath" class="shape-picker" preserveAspectRatio="none" viewBox="0 0 100 100" data-shape="path">
+                <rect class="svgborder" x="0" y="0" width="100" height="100" />
+                <path class="svg-line" d="M15,15 C11,94 74,4 80,80" style="fill: none;" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg id="shaperectangle" class="shape-picker" preserveAspectRatio="none" viewBox="0 0 100 100" data-shape='rectangle'>
+                <rect class="svgborder" x="0" y="0" width="100" height="100" />
+                <rect class="svg-shape" x="10" y="20" width="80" height="60" rx="5" ry="5" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg id="shapecircle" class="shape-picker" preserveAspectRatio="none" viewBox="0 0 100 100" data-shape='circle'>
+                <rect class="svgborder" x="0" y="0" width="100" height="100" />
+                <circle class="svg-shape" cx="50" cy="50" r="40" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg id="shapeoval" class="shape-picker" preserveAspectRatio="none" viewBox="0 0 100 100" data-shape='oval'>
+                <rect class="svgborder" x="0" y="0" width="100" height="100" />
+                <ellipse class="svg-shape" cx="50" cy="50" rx="40" ry="30" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg id="shapeline" class="shape-picker" preserveAspectRatio="none" viewBox="0 0 100 100" data-shape='line'>
+                <rect class="svgborder" x="0" y="0" width="100" height="100" />
+                <line class="svg-line" x1="15" y1="15" x2="80" y2="80" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-md-left  text-sm-center">
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="1">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="1" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="5">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="5" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="10">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="10" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="15">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="15" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="20">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="20" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="25">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="25" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+        </div>
+        <div class="svgwrapper">
+            <svg class="size-picker" viewBox="0 0 100 100" preserveAspectRatio="none" data-size="30">
+                <circle class="svgborder" cx="50" cy="50" r="40" />
+                <circle cx="50" cy="50" r="30" stroke="black" stroke-width="1" fill="black" />
+            </svg>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-12">
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #e74c3c"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #8e44ad"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #3498db"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #16a085"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #f1c40f"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #e7833c"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #d35400"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #ffffff"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #bdc3c7"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #95a5a6"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #34495e"></div>
+        <div class="col-xs-1 colour-picker" style="min-height: 20px; background-color: #000000"></div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="text-center">
+        <canvas id="doodleboard" height="700" width="1200" style="position: relative;"></canvas>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-2 col-md-offset-5">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p id="connectionStatus">Some text in the Modal..</p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var nb;
+    $(document).ready(function () {
+
+        nb = new doodleboard();
+
+        $('.shape-picker').click(function (e) {
+            setShape($(this).attr('data-shape'));
+        });
+
+        $('.size-picker').click(function (e) {
+            setSize($(this).attr('data-size'));
+        });
+
+        $('.size-picker, .shape-picker').hover(
+            function () {
+                $(this).children().addClass('hover')
+            },
+            function () {
+                $(this).children().removeClass('hover')
+            }
+        );
+
+        $('.colour-picker').bind('contextmenu', function (e) {
+            return false;
+        });
+
+        $('.colour-picker').mousedown(function (e) {
+            var colourhex = rgb2hex(this.style.backgroundColor)
+            switch (e.which) {
+                case 1:
+                    setStrokeColour(colourhex);
+                    break;
+                case 3:
+                    setFillColour(colourhex);
+                    break;
+            }
+
+        });
+
+        setShape('path');
+        setSize(1);
+        setStrokeColour('#000000')
+        setFillColour('none')
+    });
+
+    function setSize(size) {
+        nb.overlay.lineWidth = size;
+
+        $('.size-picker > .selected').removeClass('selected');
+        $('.size-picker[data-size="' + size + '"]').children().addClass('selected')
+    }
+
+    function setShape(shape) {
+        nb.overlay.shape = shape;
+        $('.shape-picker > .selected').removeClass('selected');
+        $('.shape-picker[data-shape="' + shape + '"]').children().addClass('selected')
+    }
+
+    function setStrokeColour(colourhex) {
+        $('.svg-line, .svg-shape').css('stroke', colourhex);
+        nb.overlay.strokeStyle = colourhex;
+    }
+
+    function setFillColour(colourhex) {
+
+        if (colourhex == 'none' || nb.overlay.fillStyle == colourhex && nb.overlay.useFill) {
+
+            nb.overlay.useFill = false;
+            $('.svg-shape').css('fill', 'none');
+            nb.overlay.fillStyle = 'none';
+
+        }
+        else {
+
+            nb.overlay.useFill = true;
+            $('.svg-shape').css('fill', colourhex);
+            nb.overlay.fillStyle = colourhex;
+        }
+    }
+
+    function rgb2hex(rgb) {
+        rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+        return (rgb && rgb.length === 4) ? "#" +
+            ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+    }
+</script>

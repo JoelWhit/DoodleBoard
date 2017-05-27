@@ -1,0 +1,154 @@
+﻿#shadowCanvas {
+}
+
+#doodleboard {
+    border: 10px solid grey;
+    margin: 10px;
+    cursor: crosshair;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    /*-khtml-user-select: none;*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+body {
+    padding-top: 50px;
+}
+
+/* Colour Picker */
+.colour-picker {
+    cursor: pointer;
+}
+    .colour-picker:hover {
+        border: solid 1px black;
+    }
+
+
+.size-picker {
+
+}
+
+.shape-picker {
+}
+
+
+
+svg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.svgwrapper {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+
+.svgborder {
+    fill: white;
+    stroke: black;
+    stroke-width: 5;
+    opacity: 0.5;
+    display: true;
+}
+
+
+
+
+
+.svg-shape, .svg-line {
+    fill: none;
+    stroke: black;
+    stroke-width: 7;
+    opacity: 0.5;
+    stroke-linecap: round
+}
+
+.hover, .selected {
+    opacity: 1;
+}
+
+path {
+    fill: none;
+}
+
+
+@media (min-width: 320px) {
+    .text-sm-left {
+        text-align: left;
+    }
+
+    .text-sm-right {
+        text-align: right;
+    }
+
+    .text-sm-center {
+        text-align: center;
+    }
+
+    .text-sm-justify {
+        text-align: justify;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .text-sm-left {
+        text-align: left;
+    }
+
+    .text-sm-right {
+        text-align: right;
+    }
+
+    .text-sm-center {
+        text-align: center;
+    }
+
+    .text-sm-justify {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-md-left {
+        text-align: left;
+    }
+
+    .text-md-right {
+        text-align: right;
+    }
+
+    .text-md-center {
+        text-align: center;
+    }
+
+    .text-md-justify {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-lg-left {
+        text-align: left;
+    }
+
+    .text-lg-right {
+        text-align: right;
+    }
+
+    .text-lg-center {
+        text-align: center;
+    }
+
+    .text-lg-justify {
+        text-align: justify;
+    }
+}
